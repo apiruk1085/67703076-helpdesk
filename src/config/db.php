@@ -7,6 +7,7 @@ $password = 'dev_password';
 
 try {
     $conn = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
+    $conn->exec("SET NAMES utf8");
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch(PDOException $e) {
     echo "การเชื่อมต่อฐานข้อมูลล้มเหลว: " . $e->getMessage();
